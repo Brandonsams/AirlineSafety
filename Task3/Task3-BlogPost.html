@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Task3-BlogPost</title>
+</head>
+<body>
+<h1>Flying is safer than ever. Here's how we know.</h1>
+
+<p>&quot;Between 33% and 40% of all people experience some form of anxiety when it comes to flying&quot;, according to Stratosjets. While in most cases, this fear is manageable, &quot;between 2.5% and 5% of the population have crippling anxiety, a genuine fear of flying that is classified as a clinical phobia.&quot;</p>
+
+<p>With that being said, there is no shortage of one-line quips about how safe flying really is. For example the previous Stratosjets article states, </p>
+
+<pre><code>&quot;There was a 1 in 3.37 billion chance of dying in a commercial airline plane crash between 2012-2016.&quot;
+
+&quot;98.6% of crashes do not result in a fatality.&quot;
+
+&quot;Of the 140 plane accidents during 2012-2016, only two involved fatalities (1.4%).&quot;
+
+&quot;Commercial plane incidents cause death only once in 20 million flights.&quot;
+</code></pre>
+
+<p>With that said, there is often little explanation as to where statistics like these come from. This blog post will start from data, and show exactly how flying is safer than ever.</p>
+
+<h2>Raw Data</h2>
+
+<p>This analysis will start with two distinct data sources. The primary one comes from the FiveThirtyEight GitHub repository. For a variety of airlines, it has the following fields:</p>
+
+<ul>
+<li>avail_seat_km_per_week</li>
+<li>incidents_85_99</li>
+<li>fatal_accidents_85_99</li>
+<li>fatalities_85_99</li>
+<li>incidents_00_14</li>
+<li>fatal_accidents_00_14</li>
+<li>fatalities_00_14</li>
+</ul>
+
+<p>This data source is useful because it breaks down into 3 categories over two periods of time for a total of 30 years of statistics.</p>
+
+<p>The second data source is from The World Bank. It is a count of how many flights took place every year from 1985-2014. It contains a raw count of &quot;Registered Carrier Departures&quot; worldwide. </p>
+
+<h2>Bring on the charts!</h2>
+
+<p>The data from FiveThirtyEight is broken down by airline, but this is not a super helpful distinction for showing how safe flying in general is. Instead, it is best to look at these numbers in aggregate. It is, however, good to keep the incident types categorized like in the original table. </p>
+
+<p>We will need to compare the two periods against each other. We can do this by comparing the areas of two circles, representing the amount of incidents that took place in these two periods</p>
+
+<figure>
+<img src="Slide2.jpeg" alt="" />
+</figure>
+
+<p>This shows that the number of incidents has been nearly cut in half. A similar story is true if we look at the fatalities as well.</p>
+
+<figure>
+<img src="Slide3.jpeg" alt="" />
+</figure>
+
+<p>The difference is even more striking for fatal accidents. This number has been reduced to one third of what it used to be. </p>
+
+<figure>
+<img src="Slide4.jpeg" alt="" />
+</figure>
+
+<p>But how does this compare to the number of flights that has taken place? Maybe it is the case that fewer people are flying, and thus, there are fewer things going wrong. Let's look at the data from World Book and see how many people are flying these days compared to before.</p>
+
+<figure>
+<img src="Slide5.jpeg" alt="" />
+</figure>
+
+<h2>Comparative Analysis</h2>
+
+<p>From this data, we can see that the raw amount of incidents, fatalities, and fatal accidents have been decreasing, even though the number of flights has been increasing. Therefore, we can do some calculations about how much safer 2000-2014 is when compared directly to 1985-1999.</p>
+
+<p>1985-1999: 118,088,940 flights on average</p>
+
+<p>2000-2014: 206,322,841 flights on average</p>
+
+<p>Therefore, we can compare the number of incidents per flight for these two periods, and see how much safer it is. </p>
+
+<pre><code>Incidents:
+(231/206322841)/(402/118088940) = 32.8%
+</code></pre>
+
+<p>This means that the danger today is only 32% of what it used to be, in terms of incidents. We can run the same calculation and find that a similar, yet larger effect is present for fatalities and fatal accidents.</p>
+
+<pre><code>Fatalities:
+(3109/206322841)/(6295/118088940) = 28.3%
+
+Fatal Accidents:
+(37/206322841)/(122/118088940) = 17.4%
+</code></pre>
+
+<p>Therefore, no matter how you measure it, flying is safer than ever. We started from raw data, visualized that data, and ran some comparative analysis to find out how much safer flying really has gotten over time. </p>
+
+<h2>References:</h2>
+
+<p>Air Transport, Registered Carrier Departures Worldwide | Data. https://data.worldbank.org/indicator/IS.AIR.DPRT?end=2014&amp;start=1985. Accessed 12 July 2020.</p>
+
+<p>Fear of Flying Statistics (2020 Data). 4 Feb. 2020, https://www.stratosjets.com/blog/fear-of-flying-statistics-trends-facts/.</p>
+
+<p>“Fivethirtyeight/Data.” GitHub, https://github.com/fivethirtyeight/data. Accessed 12 July 2020.</p>
+</body>
+</html>
